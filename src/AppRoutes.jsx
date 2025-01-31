@@ -1,4 +1,4 @@
-import { useRoutes } from "react-router-dom";
+import { Navigate, useRoutes } from "react-router-dom";
 import Chat from "./pages/Chat";
 import ReactFlow from "./pages/ReactFlow";
 import TaskManagment from "./pages/TaskManagment";
@@ -6,6 +6,10 @@ import TaskForm from "./components/TaskForm";
 
 const AppRoutes = () => {
   const routes = useRoutes([
+    {
+      path: "/",
+      element: <Navigate to="/task management" replace />,
+    },
     {
       path: "/task management",
       element: <TaskManagment />,
@@ -25,6 +29,10 @@ const AppRoutes = () => {
     {
       path: "/chat",
       element: <Chat />,
+    },
+    {
+      path: "*",
+      element: <Navigate to="/task management" replace />,
     },
   ]);
 
