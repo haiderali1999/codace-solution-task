@@ -56,10 +56,6 @@ const TaskForm = () => {
     }
   }, [pathname]);
 
-  useEffect(() => {
-    console.log(values, "selectd");
-  }, [values]);
-
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateAll()) {
